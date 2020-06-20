@@ -1,0 +1,11 @@
+{
+	"0.1":
+	{
+		"Unary.Compiler": "6.3.0",
+		"Unary.Functor": "0.1",
+		"Unary.Make": "0.1",
+		"Unary.Shear": "0.1",
+		"Steam": "1.49",
+		"rapidjson": "1.1.0"
+	}
+}
