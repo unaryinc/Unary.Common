@@ -8,12 +8,20 @@
 		"name": "(gdb) Launch",
 		"type": "cppdbg",
 		"request": "launch",
-		"program": "${workspaceFolder}/Unary.Make.exe",
 		"args": [],
 		"stopAtEntry": false,
 		"cwd": "${workspaceFolder}",
 		"environment": [],
-		"externalConsole": false,
+		"externalConsole": true,
+		"windows":
+		{
+			"program": "${workspaceFolder}/Unary.Make.exe",
+			"miDebuggerPath": "C:\\MinGW\\bin\\gdb.exe",
+		},
+		"linux":
+		{
+			"program": "${workspaceRoot}/Unary.Make.out",
+		},
 		"MIMode": "gdb",
 		"setupCommands": [
 		{
@@ -22,7 +30,7 @@
 			"ignoreFailures": true
 		}
 		],
-		"preLaunchTask": "Build"
+		"preLaunchTask": "Build",
 	}
 	]
 }

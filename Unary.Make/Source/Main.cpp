@@ -1,12 +1,15 @@
-#include <iostream>
-#include <vector>
-#include <string>
+//#include <iostream>
+//#include <vector>
+//#include <string>
 
-#include <Variable.hpp>
+//#include <Unary.Make/Units/DepotID.hpp>
 
-using namespace Unary::Make;
+//using namespace Unary::Make::Units;
 
-// Unary.Make.exe g++ Make.unary
+// Unary.Make.exe Make.unary
+
+#include <stdlib.h>
+#include <time.h> 
 
 int main(int argc, char *argv[])
 {
@@ -17,8 +20,5 @@ int main(int argc, char *argv[])
         Arguments.push_back(argv[i]);
     }
 
-    std::cout << "Test" << std::endl;
-
-    Variable Test;
-    Test.Test();
+    //std::cout << NewID.Version().GetString();
 }

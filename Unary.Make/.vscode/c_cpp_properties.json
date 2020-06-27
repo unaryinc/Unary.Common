@@ -3,11 +3,22 @@
         {
             "name": "Linux",
             "defines": [],
-            "compilerPath": "/usr/bin/gcc",
             "cStandard": "c11",
             "cppStandard": "gnu++17",
             "intelliSenseMode": "clang-x64",
             "includePath": [
+            "${workspaceFolder}/../rapidjson/include",
+            "${workspaceFolder}/Include"
+            ]
+        },
+        {
+            "name": "Win32",
+            "defines": [],
+            "cStandard": "c11",
+            "cppStandard": "gnu++17",
+            "intelliSenseMode": "clang-x64",
+            "includePath": [
+            "C:\\MinGW\\include",
             "${workspaceFolder}/../rapidjson/include",
             "${workspaceFolder}/Include"
             ]

@@ -6,7 +6,6 @@
 		{
             "type": "shell",
             "label": "Build",
-            "command": "/usr/bin/make",
             "args": [
                 "-f",
                 "${workspaceFolder}/Makefile"
@@ -20,6 +19,14 @@
             "group": {
                 "kind": "build",
                 "isDefault": true
+            },
+            "windows":
+            {
+                "command": "mingw32-make"
+            },
+            "linux":
+            {
+                "command": "make"
             }
         }
 	]
