@@ -5,7 +5,7 @@
 	"version": "0.2.0",
 	"configurations": [
 	{
-		"name": "(gdb) Launch",
+		"name": "Debug",
 		"type": "cppdbg",
 		"request": "launch",
 		"args": [],
@@ -15,12 +15,13 @@
 		"externalConsole": true,
 		"windows":
 		{
-			"program": "${workspaceFolder}/Unary.Make.exe",
-			"miDebuggerPath": "C:\\MinGW\\bin\\gdb.exe",
+			"program": "${workspaceFolder}\\Unary.Make.Debug.exe",
+			"miDebuggerPath": "${workspaceFolder}\\..\\Unary.MinGW\\bin\\gdb.exe",
 		},
 		"linux":
 		{
-			"program": "${workspaceRoot}/Unary.Make.out",
+			"program": "${workspaceRoot}/Unary.Make.Debug.out",
+			"miDebuggerPath": "gdb",
 		},
 		"MIMode": "gdb",
 		"setupCommands": [
@@ -30,7 +31,63 @@
 			"ignoreFailures": true
 		}
 		],
-		"preLaunchTask": "Build",
+		"preLaunchTask": "Debug"
+	},
+	{
+		"name": "Release",
+		"type": "cppdbg",
+		"request": "launch",
+		"args": [],
+		"stopAtEntry": false,
+		"cwd": "${workspaceFolder}",
+		"environment": [],
+		"externalConsole": true,
+		"windows":
+		{
+			"program": "${workspaceFolder}\\Unary.Make.Release.exe",
+			"miDebuggerPath": "${workspaceFolder}\\..\\Unary.MinGW\\bin\\gdb.exe",
+		},
+		"linux":
+		{
+			"program": "${workspaceRoot}/Unary.Make.Release.out",
+			"miDebuggerPath": "gdb",
+		},
+		"MIMode": "gdb",
+		"setupCommands": [
+		{
+			"description": "Enable pretty-printing for gdb",
+			"text": "-enable-pretty-printing",
+			"ignoreFailures": true
+		}
+		],
+		"preLaunchTask": "Release"
+	},
+	{
+		"name": "Clean",
+		"type": "cppdbg",
+		"request": "launch",
+		"cwd": "${workspaceFolder}",
+		"externalConsole": true,
+		"windows":
+		{
+			"program": "${workspaceFolder}\\..\\Unary.MinGW\\bin\\mingw32-make.exe",
+			"args": 
+			[
+				"-f",
+				"${workspaceFolder}\\Makefile",
+				"clean"
+			]
+		},
+		"linux":
+		{
+			"program": "make",
+			"args": 
+			[
+				"-f",
+				"${workspaceFolder}\\Makefile",
+				"clean"
+			]
+		}
 	}
 	]
 }

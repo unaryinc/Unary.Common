@@ -5,11 +5,7 @@
 	"tasks": [
 		{
             "type": "shell",
-            "label": "Build",
-            "args": [
-                "-f",
-                "${workspaceFolder}/Makefile"
-            ],
+            "label": "Debug",
             "options": {
                 "cwd": "${workspaceFolder}"
             },
@@ -22,11 +18,53 @@
             },
             "windows":
             {
-                "command": "mingw32-make"
+                "command": "${workspaceFolder}\\..\\Unary.MinGW\\bin\\mingw32-make.exe",
+                "args": [
+                    "-f",
+                    "${workspaceFolder}\\Makefile",
+                    "Debug=1"
+                ]
             },
             "linux":
             {
-                "command": "make"
+                "command": "make",
+                "args": [
+                    "-f",
+                    "${workspaceFolder}/Makefile",
+                    "Debug=1"
+                ]
+            }
+        },
+        {
+            "type": "shell",
+            "label": "Release",
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "windows":
+            {
+                "command": "${workspaceFolder}\\..\\Unary.MinGW\\bin\\mingw32-make.exe",
+                "args": [
+                    "-f",
+                    "${workspaceFolder}\\Makefile",
+                    "Debug=0"
+                ]
+            },
+            "linux":
+            {
+                "command": "make",
+                "args": [
+                    "-f",
+                    "${workspaceFolder}/Makefile",
+                    "Debug=0"
+                ]
             }
         }
 	]

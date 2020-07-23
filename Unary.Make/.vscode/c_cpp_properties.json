@@ -3,9 +3,9 @@
         {
             "name": "Linux",
             "defines": [],
-            "cStandard": "c11",
-            "cppStandard": "gnu++17",
-            "intelliSenseMode": "clang-x64",
+            "cStandard": "c99",
+            "cppStandard": "c++17",
+            "intelliSenseMode": "gcc-x64",
             "includePath": [
             "${workspaceFolder}/../rapidjson/include",
             "${workspaceFolder}/Include"
@@ -14,11 +14,11 @@
         {
             "name": "Win32",
             "defines": [],
-            "cStandard": "c11",
-            "cppStandard": "gnu++17",
-            "intelliSenseMode": "clang-x64",
+            "cStandard": "c99",
+            "cppStandard": "c++17",
+            "intelliSenseMode": "${default}",
             "includePath": [
-            "C:\\MinGW\\include",
+            "${workspaceFolder}/../Unary.MinGW/include",
             "${workspaceFolder}/../rapidjson/include",
             "${workspaceFolder}/Include"
             ]
