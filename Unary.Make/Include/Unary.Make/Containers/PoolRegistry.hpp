@@ -26,9 +26,7 @@ SOFTWARE.
 
 #include <unordered_map>
 #include <string>
-
-#include <Unary.Make/Enums/ErrorCode.hpp>
-#include <Unary.Make/Containers/Optional.hpp>
+#include <optional>
 
 namespace Unary::Make::Containers
 {
@@ -63,37 +61,27 @@ namespace Unary::Make::Containers
                 return Result;
             }
 
-            Containers::Optional<T*> Get(uint64_t Index)
+            std::optional<T*> Get(uint64_t Index)
             {
-                Containers::Optional<T*> Result;
-
                 if(Values.find(Index) != Values.end())
                 {
-                    Result.Code = Enums::ErrorCode::Ok;
-                    Result.Value = Values[Index];
-                }
-                else
-                {
-                    Result.Code = Enums::ErrorCode::DoesNotExist;
-                    Result.Value = nullptr;
+                    return Values[Index];
                 }
                 
-                return Result;
+                return {};
             }
 
-            Enums::ErrorCode Remove(uint64_t Index)
+            bool Remove(uint64_t Index)
             {
                 if(Values.find(Index) != Values.end())
                 {
                     Cache.push_back(Index);
                     delete Values[Index];
                     Values.erase(Index);
-                    return Enums::ErrorCode::Ok;
+                    return true;
                 }
-                else
-                {
-                    return Enums::ErrorCode::DoesNotExist;
-                }
+
+                return false;
             }
     };
 

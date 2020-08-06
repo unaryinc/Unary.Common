@@ -1,0 +1,44 @@
+{
+	"Type": "Data",
+	"Author": "Unary",
+	"Name": "Util",
+	"Version": "0.0.1",
+	"Variables": 
+	{
+		"Windows":
+		{
+			"Release": 
+			{
+				"Unary.Make": "Unary.Make/Unary.Make.Release.exe",
+				"Temp": "Temp/Release"
+			},
+			"Debug": 
+			{
+				"Unary.Make": "Unary.Make/Unary.Make.Debug.exe",
+				"Temp": "Temp/Debug"
+			}
+		},
+		"Linux":
+		{
+			"Release": 
+			{
+				"Unary.Make": "Unary.Make/Unary.Make.Release.out",
+				"Temp": "Temp/Release"
+			},
+			"Debug": 
+			{
+				"Unary.Make": "Unary.Make/Unary.Make.Debug.out",
+				"Temp": "Temp/Debug"
+			}
+		}
+	},
+	"Patches":
+	[
+		{
+			"Author": "Unary",
+			"Name": "Make",
+			"Version": "0.0.1",
+			"Path": ""
+		}
+	]
+}

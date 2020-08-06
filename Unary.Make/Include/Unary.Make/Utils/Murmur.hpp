@@ -28,5 +28,5 @@ SOFTWARE.
 
 namespace Unary::Make::Utils::Murmur
 {
-    uint64_t Hash(const void* Data, int Length, uint64_t Seed);
+    uint64_t Hash(const void* Data, uint64_t Length, uint64_t Seed);
 }

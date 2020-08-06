@@ -27,10 +27,9 @@ SOFTWARE.
 #include <vector>
 #include <unordered_map>
 #include <string>
+#include <optional>
 
 #include <Unary.Make/Utils/Murmur.hpp>
-#include <Unary.Make/Enums/ErrorCode.hpp>
-#include <Unary.Make/Containers/Optional.hpp>
 
 namespace Unary::Make::Containers
 {
@@ -40,57 +39,47 @@ namespace Unary::Make::Containers
         private:
         
             std::unordered_map<uint64_t, V> Values;
-
+        
         public:
 
-            Optional<uint64_t> Add(V Value)
+            std::optional<uint64_t> Add(V Value)
             {
                 uint64_t Hash = Murmur::Hash(Value.begin(), Value.length(), 0);
 
-                Optional<uint64_t> Result;
+                std::optional<uint64_t> Result;
 
-                if(Values.find(Hash) != Values.end())
+                if(Values.find(Hash) == Values.end())
                 {
-                    Result.Code = ErrorCode::AlreadyExists;
-                    return Result;
+                    Result.value = Hash;
+                    Values[Hash] = Value;
                 }
-                else
-                {
-                    Result.Value = Hash;
-                    Result.Code = ErrorCode::Ok;
-                    return Result;
-                }
+
+                return Result;
             }
 
-            Optional<V> Get(uint64_t Key)
+            std::optional<V> Get(uint64_t Key)
             {
-                Optional<V> Result;
+                std::optional<V> Result;
 
                 if(Values.find(Key) != Values.end())
                 {    
-                    Result.Value = Values[Key];
-                    Result.Code = ErrorCode::Ok;
-                    return Result;
+                    Result.value = Values[Key];    
                 }
-                else
-                {
-                    Result.Code = ErrorCode::DoesNotExist;
-                    return Result;
-                }
+
+                return Result;
             }
 
-            ErrorCode Remove(uint64_t Key)
+            bool Remove(uint64_t Key)
             {
                 if(Values.find(Key) != Values.end())
                 {
                     Values.erase(Key);
-                    return ErrorCode::Ok;
+                    return true;
                 }
-                else
-                {
-                    return ErrorCode::DoesNotExist;
-                }
+                
+                return false;
             }
+            
     };
 
     typedef HashRegistry<std::string> StringHashRegistry;

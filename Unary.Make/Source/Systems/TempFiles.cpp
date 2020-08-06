@@ -48,11 +48,6 @@ namespace Unary::Make::Systems
                 }
             }
         }
-
-        for(auto Ittr = SysPtr->Get<Arguments>()->Get()->begin(); Ittr < SysPtr->Get<Arguments>()->Get()->end(); ++Ittr)
-        {
-            std::cout << *Ittr << std::endl;
-        }
     }
 
     void TempFiles::Clear()

@@ -1,0 +1,49 @@
+{
+	"Type": "Binaries",
+	"Author": "Valve",
+	"Name": "SteamworksSDK",
+	"Version": "1.49.0",
+	"Flags":
+	{
+		"Windows":
+		{
+			"Release": [],
+			"Debug": []
+		},
+		"Linux":
+		{
+			"Release": [],
+			"Debug": []
+		}
+	},
+	"Headers": "public",
+	"Binaries":
+	{
+		"Windows":
+		{
+			"Release":
+			{
+				"Library": "redistributable_bin/win64/steam_api64.lib",
+				"Runtime": "redistributable_bin/win64/steam_api64.dll"
+			},
+			"Debug":
+			{	
+				"Library": "redistributable_bin/win64/steam_api64.lib",
+				"Runtime": "redistributable_bin/win64/steam_api64.dll"
+			}
+		},
+		"Linux":
+		{
+			"Release":
+			{	
+				"Library": "redistributable_bin/linux64/libsteam_api.so",
+				"Runtime": "redistributable_bin/linux64/libsteam_api.so"
+			},
+			"Debug":
+			{	
+				"Library": "redistributable_bin/linux64/libsteam_api.so",
+				"Runtime": "redistributable_bin/linux64/libsteam_api.so"
+			}
+		}
+	}
+}

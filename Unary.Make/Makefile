@@ -4,7 +4,7 @@ SRC_DIR := ${CURDIR}/Source
 OBJ_DIR := ${CURDIR}/Temp
 
 ifeq ($(Debug), 1)
-	Args := -g -ggdb
+	Args := -g -ggdb 
 	ResultFirst := Unary.Make.Debug
 	OBJ_DIR := $(OBJ_DIR)/Debug
 else
@@ -46,6 +46,7 @@ else
 	mkdir -p $@ || true
 endif
 	g++ $(Args)-Wall -static -std=c++17 -I$(CURDIR)/Include -I$(CURDIR)/../rapidjson/include -c $< -o $@
+	
 
 clean : 
 ifeq ($(OS),Windows_NT)

@@ -16,6 +16,11 @@
 		"windows":
 		{
 			"program": "${workspaceFolder}\\Unary.Make.Debug.exe",
+			"args": 
+			[
+				"Build.json",
+				"${workspaceFolder}/.."
+			],
 			"miDebuggerPath": "${workspaceFolder}\\..\\Unary.MinGW\\bin\\gdb.exe",
 		},
 		"linux":

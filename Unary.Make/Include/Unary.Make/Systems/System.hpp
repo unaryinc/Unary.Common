@@ -36,8 +36,6 @@ namespace Unary::Make::Systems
     static std::string GetTypeStatic(){return #Name;} \
     std::string GetType(){return GetTypeStatic();}
 
-    #define Delete(Ptr) delete Ptr; Ptr = nullptr;
-
     class System
     {
         public:

@@ -52,18 +52,33 @@ namespace Unary::Make::Systems
             uint64_t Create()
             {
                 uint64_t Result = Registry.Add();
-                Registry.Get(Result).Value->open(Path + std::to_string(Result));
+                Registry.Get(Result).value()->open(Path + std::to_string(Result));
                 return Result;
             }
 
-            Containers::Optional<std::ofstream*> Get(uint64_t Value)
+            std::optional<std::ofstream*> Get(uint64_t Value)
             {
                 return Registry.Get(Value);
             }
 
-            Enums::ErrorCode Remove(uint64_t Value)
+            bool Close(uint64_t Value)
             {
-                Registry.Get(Value).Value->close();
+                if(Registry.Get(Value).has_value())
+                {
+                    Registry.Get(Value).value()->close();
+                    return true;
+                }
+
+                return false;
+            }
+
+            bool Remove(uint64_t Value)
+            {
+                if(Close(Value))
+                {
+                    return false;
+                }
+                std::filesystem::remove(Path + std::to_string(Value));
                 return Registry.Remove(Value);
             }
     };

@@ -1,0 +1,49 @@
+{
+	"Type": "Binaries",
+	"Author": "Urho3D",
+	"Name": "Urho3D",
+	"Version": "1.7.1",
+	"Flags":
+	{
+		"Windows":
+		{
+			"Release": [],
+			"Debug": []
+		},
+		"Linux":
+		{
+			"Release": [],
+			"Debug": []
+		}
+	},
+	"Headers": "include",
+	"Binaries":
+	{
+		"Windows":
+		{
+			"Release":
+			{
+				"Library": "lib/Urho3D.a",
+				"Runtime": "bin/Urho3D.dll"
+			},
+			"Debug":
+			{	
+				"Library": "lib/Urho3D_d.a",
+				"Runtime": "bin/Urho3D_d.dll"
+			}
+		},
+		"Linux":
+		{
+			"Release":
+			{
+				"Library": "lib/Urho3D.so",
+				"Runtime": "bin/Urho3D.so"
+			},
+			"Debug":
+			{	
+				"Library": "lib/Urho3D_d.so",
+				"Runtime": "bin/Urho3D_d.so"
+			}
+		}
+	}
+}

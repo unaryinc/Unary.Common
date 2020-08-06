@@ -37,6 +37,9 @@ namespace Unary::Make::Systems
         
             std::vector<std::string>* LaunchArguments;
 
+            std::string MakeFile;
+            std::vector<std::string> DepotDirs;
+
         public:
 
             DeclareType(Unary::Make::Systems::Arguments)
@@ -56,9 +59,23 @@ namespace Unary::Make::Systems
                 return LaunchArguments;
             }
 
-            void Set(std::vector<std::string>* Value)
+            bool Set(std::vector<std::string>* Value)
             {
+                if(Value->size() < 3)
+                {
+                    return false;
+                }
+
                 LaunchArguments = Value;
+
+                MakeFile = (*Value)[1];
+
+                for(size_t i = 2; i < Value->size(); ++i)
+                {
+                    DepotDirs.push_back((*Value)[i]);
+                }
+
+                return true;
             }
     };
 }

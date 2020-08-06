@@ -27,33 +27,39 @@ SOFTWARE.
 #include <string>
 
 #include <Unary.Make/Systems/System.hpp>
-#include <Unary.Make/Enums/ErrorCode.hpp>
+
+#include <Unary.Make/Systems/Arguments.hpp>
+#include <Unary.Make/Systems/Data.hpp>
+#include <Unary.Make/Systems/TempFiles.hpp>
 
 using namespace Unary::Make;
+using namespace Unary::Make::Systems;
 
 int main(int argc, char *argv[])
 {
     try
     {
-        std::vector<std::string> Arguments;
+        std::vector<std::string> NewArguments;
 
         for(int i = 0; i < argc; ++i)
         {
-            Arguments.push_back(argv[i]);
+            NewArguments.push_back(argv[i]);
         }
 
-        Systems::Sys NewSys;
+        Sys NewSys;
 
         NewSys.Init();
-        NewSys.Run(&Arguments);
+
+        NewSys.Run(&NewArguments);
+
         NewSys.Clear();
 
-        return static_cast<int>(Enums::ErrorCode::Ok);
+        return 0;
     }
     catch(std::exception& e)
     {
         std::cout << "An unhandled exception occured: " << e.what() << std::endl;
-        return static_cast<int>(Enums::ErrorCode::GenericError);
+        return 1;
     }
     
 }

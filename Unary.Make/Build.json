@@ -1,0 +1,16 @@
+{
+	"Type": "Executable",
+	"Debug": false,
+	"DepotFolders":
+	[
+		"${BUILD}/../"
+	],
+	"Entries":
+	[
+		{
+			"Author": "Unary",
+			"Name": "Make",
+			"Version": "0.0.1"
+		}
+	]
+}

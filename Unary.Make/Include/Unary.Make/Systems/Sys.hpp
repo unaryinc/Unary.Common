@@ -33,8 +33,8 @@ SOFTWARE.
 #include <algorithm>
 
 #include <Unary.Make/Systems/System.hpp>
-#include <Unary.Make/Utils/Memory.hpp>
 #include <Unary.Make/Utils/TypeAccessor.hpp>
+
 
 namespace Unary::Make::Systems
 {
@@ -44,20 +44,26 @@ namespace Unary::Make::Systems
 	{
 		private:
 
-			std::unordered_map<std::string, System*>* Modules;
-			std::vector<std::string>* Order;
+			std::unordered_map<std::string, System*> Modules;
+			std::vector<std::string> Order;
 
 		public:
 
-			void Init();
+			void Init()
+			{
+				
+			}
+
+			bool Run(std::vector<std::string>* Args);
+
 			void Clear();
-			
-			template <typename T>
-			T* Get();
 
 			template <typename T>
 			T* Add();
 
-			void Run(std::vector<std::string>* Args);
+			template <typename T>
+			T* Get();
+
+			
 	};
 }

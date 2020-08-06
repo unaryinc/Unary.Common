@@ -1,0 +1,21 @@
+{
+	"Type": "Sources",
+	"Author": "Unary",
+	"Name": "Make",
+	"Version": "0.0.1",
+	"Flags":
+	{
+		"Windows":
+		{
+			"Release": [],
+			"Debug": []
+		},
+		"Linux":
+		{
+			"Release": [],
+			"Debug": []
+		}
+	},
+	"Headers": "Include",
+	"Sources": "Source"
+}
