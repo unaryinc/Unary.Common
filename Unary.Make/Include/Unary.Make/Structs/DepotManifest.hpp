@@ -31,7 +31,7 @@ SOFTWARE.
 #include <Unary.Make/Structs/DepotVersion.hpp>
 #include <Unary.Make/Structs/DepotFlags.hpp>
 #include <Unary.Make/Structs/DepotBinaries.hpp>
-#include <Unary.Make/Structs/DepotVariables.hpp>
+#include <Unary.Make/Structs/DepotData.hpp>
 #include <Unary.Make/Structs/DepotPatches.hpp>
 
 namespace Unary::Make::Structs
@@ -58,7 +58,7 @@ namespace Unary::Make::Structs
         Structs::DepotBinaries Binaries;
 
         // Metadata that is provided by this Depot
-        Structs::DepotData Variables;
+        Structs::DepotData Data;
 
         // Patches that are required to the target Depot
         Structs::DepotPatches Patches;

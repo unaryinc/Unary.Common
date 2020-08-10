@@ -1,6 +1,6 @@
-#include <Unary.Make/Utils/Static.hpp>
+#include <Unary.Make/Units/Static.hpp>
 
-namespace Unary::Make::Utils
+namespace Unary::Make::Units
 {
     std::unordered_map<std::string, Enums::DepotType> Static::DepotTypes =
     {

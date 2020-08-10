@@ -5,6 +5,7 @@
 	[
 		"${BUILD}/../"
 	],
+	"CompiledPath": "${BUILD}",
 	"Entries":
 	[
 		{

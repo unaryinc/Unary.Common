@@ -16,8 +16,8 @@ namespace Unary::Make::Systems
 
         Structs::DepotManifest NewManifest;
 
-        const std::string& OS = Utils::Static::OS;
-        auto DepotTypes = Utils::Static::DepotTypes;
+        const std::string& OS = Units::Static::OS;
+        auto DepotTypes = Units::Static::DepotTypes;
 
        std::string NewType = Document["Type"].GetString();
 
@@ -36,13 +36,13 @@ namespace Unary::Make::Systems
             auto ReleaseObj = Document["Data"][OS.data()]["Release"].GetObject();
             for(auto Ittr = ReleaseObj.MemberBegin(); Ittr != ReleaseObj.MemberEnd(); ++Ittr)
             {
-                NewManifest.Variables.Release[Ittr->name.GetString()] = Ittr->value.GetString();
+                NewManifest.Data.Release[Ittr->name.GetString()] = Ittr->value.GetString();
             }
 
             auto DebugObj = Document["Data"][OS.data()]["Debug"].GetObject();
             for(auto Ittr = DebugObj.MemberBegin(); Ittr != DebugObj.MemberEnd(); ++Ittr)
             {
-                NewManifest.Variables.Debug[Ittr->name.GetString()] = Ittr->value.GetString();
+                NewManifest.Data.Debug[Ittr->name.GetString()] = Ittr->value.GetString();
             }
             return true;
         }

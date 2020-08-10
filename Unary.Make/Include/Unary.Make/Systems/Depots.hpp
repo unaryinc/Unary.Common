@@ -37,7 +37,7 @@ SOFTWARE.
 #include <Unary.Make/Structs/DepotManifest.hpp>
 
 #include <Unary.Make/Systems/Arguments.hpp>
-#include <Unary.Make/Utils/Static.hpp>
+#include <Unary.Make/Units/Static.hpp>
 
 namespace Unary::Make::Systems
 {

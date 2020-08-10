@@ -3,17 +3,19 @@
 	"Author": "Unary",
 	"Name": "Util",
 	"Version": "0.0.1",
-	"Variables": 
+	"Data":
 	{
 		"Windows":
 		{
 			"Release": 
 			{
+				"Compiler": "/../Unary.MinGW/bin/g++",
 				"Unary.Make": "Unary.Make/Unary.Make.Release.exe",
 				"Temp": "Temp/Release"
 			},
 			"Debug": 
 			{
+				"Compiler": "/../Unary.MinGW/bin/g++",
 				"Unary.Make": "Unary.Make/Unary.Make.Debug.exe",
 				"Temp": "Temp/Debug"
 			}
@@ -22,23 +24,16 @@
 		{
 			"Release": 
 			{
+				"Compiler": "g++",
 				"Unary.Make": "Unary.Make/Unary.Make.Release.out",
 				"Temp": "Temp/Release"
 			},
 			"Debug": 
 			{
+				"Compiler": "g++",
 				"Unary.Make": "Unary.Make/Unary.Make.Debug.out",
 				"Temp": "Temp/Debug"
 			}
 		}
-	},
-	"Patches":
-	[
-		{
-			"Author": "Unary",
-			"Name": "Make",
-			"Version": "0.0.1",
-			"Path": ""
-		}
-	]
+	}
 }

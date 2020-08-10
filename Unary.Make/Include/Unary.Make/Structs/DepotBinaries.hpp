@@ -27,7 +27,7 @@ SOFTWARE.
 #include <string>
 #include <vector>
 
-#include <Unary.Make/Utils/Static.hpp>
+#include <Unary.Make/Units/Static.hpp>
 
 namespace Unary::Make::Structs
 {
@@ -40,9 +40,9 @@ namespace Unary::Make::Structs
 
         std::string GetString()
         {
-            return "ReleaseLibrary: " + ReleaseLibrary + Utils::Static::NewLine +
-            "ReleaseRuntime: " + ReleaseRuntime + Utils::Static::NewLine +
-            "DebugLibrary: " + DebugLibrary + Utils::Static::NewLine +
+            return "ReleaseLibrary: " + ReleaseLibrary + Units::Static::NewLine +
+            "ReleaseRuntime: " + ReleaseRuntime + Units::Static::NewLine +
+            "DebugLibrary: " + DebugLibrary + Units::Static::NewLine +
             "DebugRuntime: " + DebugRuntime;
         }
     };

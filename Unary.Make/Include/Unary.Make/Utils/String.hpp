@@ -32,4 +32,6 @@ SOFTWARE.
 namespace Unary::Make::Utils::String
 {
     std::vector<std::string> Split(const std::string& Value, const char& Delimiter);
+
+    bool BeginsWith(const std::string& Value, const std::string& BeginsWithWhat);
 }

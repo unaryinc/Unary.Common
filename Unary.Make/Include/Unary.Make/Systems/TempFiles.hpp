@@ -52,8 +52,18 @@ namespace Unary::Make::Systems
             uint64_t Create()
             {
                 uint64_t Result = Registry.Add();
-                Registry.Get(Result).value()->open(Path + std::to_string(Result));
                 return Result;
+            }
+
+            bool Open(uint64_t Value)
+            {
+                if(Registry.Get(Value).has_value())
+                {
+                    Registry.Get(Value).value()->open(Path + std::to_string(Value));
+                    return true;
+                }
+
+                return false;
             }
 
             std::optional<std::ofstream*> Get(uint64_t Value)
@@ -74,12 +84,13 @@ namespace Unary::Make::Systems
 
             bool Remove(uint64_t Value)
             {
-                if(Close(Value))
+                if(Registry.Get(Value).has_value())
                 {
-                    return false;
+                    std::filesystem::remove(Path + std::to_string(Value));
+                    return Registry.Remove(Value);
                 }
-                std::filesystem::remove(Path + std::to_string(Value));
-                return Registry.Remove(Value);
+                
+                return false;
             }
     };
 }

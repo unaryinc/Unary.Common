@@ -15,4 +15,13 @@ namespace Unary::Make::Utils::String
 
         return Parts;
     }
+
+    bool BeginsWith(const std::string& Value, const std::string& BeginsWithWhat)
+    {
+        if(Value.rfind(BeginsWithWhat, 0) == 0)
+        {
+            return true;
+        }
+        return false;
+    }
 }

@@ -27,7 +27,7 @@ SOFTWARE.
 #include <string>
 #include <vector>
 
-#include <Unary.Make/Utils/Static.hpp>
+#include <Unary.Make/Units/Static.hpp>
 
 namespace Unary::Make::Structs
 {
@@ -50,7 +50,7 @@ namespace Unary::Make::Structs
                 }
             }
 
-            Result += Utils::Static::NewLine + "Debug: ";
+            Result += Units::Static::NewLine + "Debug: ";
 
             size_t DebugSize = Release.size();
             for(size_t i = 0; i < DebugSize; ++i)
