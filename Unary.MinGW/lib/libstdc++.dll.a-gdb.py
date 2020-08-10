@@ -19,8 +19,8 @@ import gdb
 import os
 import os.path
 
-pythondir = '/R/winlibs64_10.1.0/inst_gcc-10.1.0/share/gcc/share/gcc-10.1.0/python'
-libdir = '/R/winlibs64_10.1.0/inst_gcc-10.1.0/share/gcc/lib/../lib'
+pythondir = '/d/Prog/winlibs64-10.2.0/home/inst_gcc-10.2.0/share/gcc/share/gcc-10.2.0/python'
+libdir = '/d/Prog/winlibs64-10.2.0/home/inst_gcc-10.2.0/share/gcc/lib/../lib'
 
 # This file might be loaded when there is no current objfile.  This
 # can happen if the user loads it manually.  In this case we don't

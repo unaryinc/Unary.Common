@@ -4,7 +4,7 @@
    are permitted in any medium without royalty provided the copyright
    notice and this notice are preserved.  */
 OUTPUT_FORMAT(pei-i386)
-SEARCH_DIR("/R/winlibs64_10.1.0/inst_binutils-2.34/share/binutils/x86_64-w64-mingw32/lib");
+SEARCH_DIR("/R/winlibs64-10.2.0/inst_binutils-2.35/share/binutils/x86_64-w64-mingw32/lib");
 SECTIONS
 {
   /* Make the virtual address and file offset synced if the alignment is

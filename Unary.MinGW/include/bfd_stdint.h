@@ -1,4 +1,4 @@
-/* generated for  x86_64-w64-mingw32-gcc.exe (MinGW-W64 x86_64-posix-seh, built by Brecht Sanders) 10.1.0 */
+/* generated for  x86_64-w64-mingw32-gcc.exe (MinGW-W64 x86_64-posix-seh, built by Brecht Sanders) 10.2.0 */
 
 #ifndef GCC_GENERATED_STDINT_H
 #define GCC_GENERATED_STDINT_H 1
