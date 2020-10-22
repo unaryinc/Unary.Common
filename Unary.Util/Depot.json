@@ -9,13 +9,13 @@
 		{
 			"Release": 
 			{
-				"Compiler": "/../Unary.MinGW/bin/g++",
+				"Compiler": "/../Thirdparty/MinGW/bin/g++",
 				"Unary.Make": "Unary.Make/Unary.Make.Release.exe",
 				"Temp": "Temp/Release"
 			},
 			"Debug": 
 			{
-				"Compiler": "/../Unary.MinGW/bin/g++",
+				"Compiler": "/../Thirdparty/MinGW/bin/g++",
 				"Unary.Make": "Unary.Make/Unary.Make.Debug.exe",
 				"Temp": "Temp/Debug"
 			}
